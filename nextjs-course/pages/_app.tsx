@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app'
+import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -7,6 +7,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </Layout>
   )
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log(metric)
 }
 
 export default MyApp

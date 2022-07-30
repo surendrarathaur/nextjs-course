@@ -38,7 +38,7 @@ const Login = () => {
                 <Image
                     alt="Mountains"
                     src={Pic1}
-                    layout="intrinsic"
+                    layout="responsive"
                     objectFit="cover"
                     quality={100}
                 />
