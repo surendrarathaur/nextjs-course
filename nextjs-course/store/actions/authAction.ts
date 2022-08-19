@@ -9,7 +9,7 @@ import {
 import { register, logInUser, getUser } from '../services/auth';
 
 export const registerUser = (userData:any) => ({
-    type: 'REGISTER_USER',
+    type: REGISTER_USER,
     payload: new Promise(async (resolve, reject) => {
         try {
             console.log('action Data', userData)
@@ -23,7 +23,7 @@ export const registerUser = (userData:any) => ({
 });
 
 export const loginUser = (userData:any) => ({
-    type: 'LOGIN_USER',
+    type: LOGIN_USER,
     payload: new Promise(async (resolve, reject) => {
         try {
             console.log('action Data', userData)
@@ -37,7 +37,7 @@ export const loginUser = (userData:any) => ({
 });
 
 export const fetchUser = () => ({
-    type: 'LOGIN_USER',
+    type: GET_USER,
     payload: new Promise(async (resolve, reject) => {
         try {
             const response = await getUser();

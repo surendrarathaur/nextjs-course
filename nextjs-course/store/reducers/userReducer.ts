@@ -1,28 +1,28 @@
+import { REGISTER_USER, LOGIN_USER, UPDATE_USER, DELETE_USER } from '../actions/type'
 const initialState = {
     loading: false,
     profile: {}
 }
-export default function userReducer(state = initialState, action: any) {
+export default function userReducer(state = [], action: any) {
     switch (action.type) {
-        case 'LOGIN_USER':
+        case LOGIN_USER:
             return {
-                ...state,
-                loading: false
+                ...state
             }
-        case 'REGISTER_USER':
+        case REGISTER_USER:
             return {
                 ...state,
-                loading: false
+                payload:action.payload
             }
-        case 'UPDATE_USER':
+        case UPDATE_USER:
             return {
                 ...state,
-                loading: false
+                payload:action.payload
             }
-        case 'DELETE_USER':
+        case DELETE_USER:
             return {
                 ...state,
-                loading: false
+                payload:action.payload
             }
         default:
             return state

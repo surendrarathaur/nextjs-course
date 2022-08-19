@@ -18,7 +18,7 @@ module.exports.getUser = async (req, res) => {
         res.status(404).json({ message: error.message })
     }
 }
-module.exports.createUser = async (req, res) => {
+module.exports.createUser = (req, res) => {
     const body = req.body;
     console.log(body)
     try {
