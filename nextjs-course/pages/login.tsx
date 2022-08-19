@@ -7,7 +7,7 @@ import LoginPage from "../components/auth/LoginPage";
 import Registration from "../components/auth/Registration";
 
 const TabPanel = (props: any) => {
-    const {children, value, index} = props;
+    const { children, value, index } = props;
     return (
         <div role='tabpanel' hidden={value !== index}>
             {
@@ -23,8 +23,8 @@ const TabPanel = (props: any) => {
 
 const Login = () => {
     const [value, setValue] = useState(0);
-
-    const handleChange = (event:any, newValue:any) => {
+    
+    const handleChange = (event: any, newValue: any) => {
         setValue(newValue);
     }
     return <>
@@ -34,7 +34,7 @@ const Login = () => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <Grid container sx={{ height: '90vh' }}>
-            <Grid item lg={7} sm={5} sx={{display: {xs: 'none', sm: 'block'}}}>
+            <Grid item lg={7} sm={5} sx={{ display: { xs: 'none', sm: 'block' } }}>
                 <Image
                     alt="Mountains"
                     src={Pic1}
@@ -44,17 +44,17 @@ const Login = () => {
                 />
             </Grid>
             <Grid item lg={5} sm={7} xs={12}>
-                <Card sx={{width:'100%', height:'100%'}}>
-                   <Box>
+                <Card sx={{ width: '100%', height: '100%' }}>
+                    <Box>
                         <Box sx={{}}>
                             <Tabs value={value} textColor="secondary" indicatorColor="secondary" onChange={handleChange}>
-                                <Tab label='Login' sx={{textTransform:'none', fontWeight:'bold'}}></Tab>
-                                <Tab label='Registration' sx={{textTransform:'none', fontWeight:'bold'}}></Tab>
+                                <Tab label='Registration' sx={{ textTransform: 'none', fontWeight: 'bold' }}></Tab>
+                                <Tab label='Login' sx={{ textTransform: 'none', fontWeight: 'bold' }}></Tab>
                             </Tabs>
-                            <TabPanel value={value} index={0}><LoginPage /></TabPanel>
-                            <TabPanel value={value} index={1}><Registration /></TabPanel>
+                            <TabPanel value={value} index={0}><Registration /></TabPanel>
+                            <TabPanel value={value} index={1}><LoginPage /></TabPanel>
                         </Box>
-                   </Box>
+                    </Box>
                 </Card>
             </Grid>
         </Grid>

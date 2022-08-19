@@ -33,9 +33,9 @@ const Posts = ({ posts }: Props) => {
 
 Posts.getInitialProps = async (ctx: any) => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const json = await res.json()
+  const data = await res.json()
   return {
-    posts: json
+    posts: data.slice(0,3)
   }
 }
 
